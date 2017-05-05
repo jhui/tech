@@ -1,0 +1,51 @@
+---
+name: Tech
+description: Jonathan Hui technology notes
+url: https://jhui.github.io
+baseurl: /tech
+permalink: /blog/:year/:month/:day/:title.html
+paginate_path: /blog/page:num/
+paginate: 5
+timezone: America/Los_Angeles
+highlighter: pygments
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+- scope:
+    path: blog
+    type: pages
+  values:
+    sectionid: blog
+- scope:
+    path: tutorial
+    type: pages
+  values:
+    layout: tutorial
+    sectionid: tutorial
+- scope:
+    path: docs
+    type: pages
+  values:
+    layout: docs
+    sectionid: docs	
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- Rakefile
+- vendor/bundle
+markdown: redcarpet
+redcarpet:
+  extensions:
+  - fenced_code_blocks
+  - footnotes
+sass:
+  style: :compressed
+  sass_dir: _css
+gems:
+- jekyll-redirect-from
+- jekyll-paginate
